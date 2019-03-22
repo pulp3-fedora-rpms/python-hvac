@@ -45,7 +45,9 @@ rm -rf %{pypi_name}.egg-info
 %files -n python3-%{pypi_name}
 %doc README.md
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/tests
+# Make sure this stays commented out or deleted to build successfully.
+# MANIFEST.in prunes it, # but pyp2rpm lists it anyway.
+#%{python3_sitelib}/tests
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %changelog
